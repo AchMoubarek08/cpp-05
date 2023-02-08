@@ -1,5 +1,5 @@
 CC = c++ -Wall -Wextra -Werror -std=c++98 -g -o Bureaucrat 
-SRC =  Bureaucrat.cpp main.cpp
+SRC =  Bureaucrat.cpp main.cpp Form.cpp
 
 NAME = Bureaucrat
 

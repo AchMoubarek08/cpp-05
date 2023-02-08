@@ -32,6 +32,17 @@ Form::~Form()
     std::cout << "Destructor called" << std::endl;
 }
 
+std::ostream &operator << (std::ostream &o, Form const &rhs)
+{
+    o << "Form " << rhs.getName() << " is ";
+    if (rhs.getSigned())
+        o << "signed";
+    else
+        o << "unsigned";
+    o << " and requires grade " << rhs.getGradeToSign() << " to sign and grade " << std::endl;
+    return o;
+}
+
 void Form::beSigned(Bureaucrat &aristocrat)
 {
     if (aristocrat.getGrade() < _gradeToSign)
@@ -55,4 +66,16 @@ bool Form::getSigned() const
 int Form::getGradeToSign() const
 {
     return _gradeToSign;
+}
+
+// form exepctions
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+    return "Grade too high : out of range";
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+    return "Grade too low : out of range";
 }

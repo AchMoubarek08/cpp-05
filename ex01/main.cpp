@@ -1,18 +1,21 @@
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat b("leomessi", 1);
-        std::cout << b;
-        for(int i = 0; i < 50; i++)
-            b.decrementGrade();
-        std::cout << b;
+        Form F("formula", 33, 42);
+        std::cout << F;
+        Bureaucrat B("aristo", 39);
+        // std::cout << B;
+        F.beSigned(B);
+        B.signForm(F);
+        std::cout << F;          
     }
-    catch (const std::exception &e)
+    catch(std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }
