@@ -1,7 +1,7 @@
-CC = c++ -Wall -Wextra -Werror -std=c++98 -g -o Form 
-SRC =  Bureaucrat.cpp main.cpp Form.cpp
+CC = c++ -Wall -Wextra -Werror -std=c++98 -g -o Bureaucrat 
+SRC =  Bureaucrat.cpp main.cpp 
 
-NAME = Form
+NAME = Bureaucrat
 
 all: $(NAME)
 
