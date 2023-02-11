@@ -39,7 +39,7 @@ std::ostream &operator << (std::ostream &o, Form const &rhs)
     if (rhs.getSigned())
         o << "signed" << std::endl;
     else
-        o << "unsigned and requires grade " << rhs.getGradeToSign() << " to sign and grade " << std::endl;
+        o << "unsigned and requires grade " << rhs.getGradeToSign() << " to sign and grade " << rhs.getGradeToExecute() << " to execute"<< std::endl;
     return o;
 }
 
@@ -65,7 +65,10 @@ int Form::getGradeToSign() const
 {
     return _gradeToSign;
 }
-
+int Form::getGradeToExecute() const
+{
+    return _gradeToExecute;
+}
 // form exepctions
 
 const char *Form::GradeTooHighException::what() const throw()
@@ -77,3 +80,9 @@ const char *Form::GradeTooLowException::what() const throw()
 {
     return "form : Grade too low";
 }
+
+const char  *  Form::FormNotSignedException::what() const throw()
+{
+    return "Form not signed successfully";
+}
+

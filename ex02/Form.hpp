@@ -31,10 +31,17 @@ class Form
             public:
                 virtual const char *what() const throw();
         };
+        class FormNotSignedException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw();
+        };
         std::string getName() const;
         bool getSigned() const;
         void beSigned(Bureaucrat &aristocrat);
         int getGradeToSign() const;
+        int getGradeToExecute() const;
+        virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &o, Form const &rhs);
