@@ -6,7 +6,7 @@
 /*   By: amoubare <amoubare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 10:40:21 by fstitou           #+#    #+#             */
-/*   Updated: 2023/02/12 20:03:50 by amoubare         ###   ########.fr       */
+/*   Updated: 2023/02/12 20:18:23 by amoubare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
         Intern i;
         Form *F;
 
-        F = i.makeForm("shrubbery creation", "Bender");
+        F = i.makeForm("presidential pardon", "Bender");
         if (F)
         {
             F->beSigned(b);
