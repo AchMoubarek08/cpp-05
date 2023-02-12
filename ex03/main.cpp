@@ -6,7 +6,7 @@
 /*   By: amoubare <amoubare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 10:40:21 by fstitou           #+#    #+#             */
-/*   Updated: 2023/02/12 19:55:02 by amoubare         ###   ########.fr       */
+/*   Updated: 2023/02/12 20:03:50 by amoubare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-   try 
-   {
-        Bureaucrat B("aristo",5);
-        ShrubberyCreationForm S("ASCII tree");
-        RobotomyRequestForm R("Robot");
-        PresidentialPardonForm P("President");
-        S.beSigned(B);
-        S.execute(B);
-        R.beSigned(B);
-        R.execute(B);
-        P.beSigned(B);
-        P.execute(B);
-    }
-    catch(std::exception& e)
+	try 
     {
-        std::cout << e.what() << std::endl;
+        Bureaucrat b("B", 1);
+        Intern i;
+        Form *F;
+
+        F = i.makeForm("shrubbery creation", "Bender");
+        if (F)
+        {
+            F->beSigned(b);
+            F->execute(b);
+        }
     }
+    catch (std::exception & e)
+    {
+        std::cout<< e.what() <<std::endl;
+    }
+    return 0;
 }

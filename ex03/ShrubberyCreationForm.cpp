@@ -35,7 +35,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     else
     {
         std::ofstream file;
-        file.open("zbi_shrubbery");
+        file.open("zbibi_shrubbery");
         file << "          v" << std::endl;
         file << "         >X<" << std::endl;
         file << "          A" << std::endl;

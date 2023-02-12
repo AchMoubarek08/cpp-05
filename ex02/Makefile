@@ -1,5 +1,5 @@
 CC = c++ -Wall -Wextra -Werror -std=c++98 -g -o Forms 
-SRC =  Bureaucrat.cpp main.cpp Form.cpp
+SRC =  Bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 NAME = Forms
 
